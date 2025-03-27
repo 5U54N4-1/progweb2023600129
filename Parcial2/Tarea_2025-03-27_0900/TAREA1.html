@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Serie Numérica de Dos en Dos hasta llegar al 400</h1>
+
+    <script>
+        let i;
+        let suma = 0;
+        let cantidad = 0;
+        
+        for (i = 2; i <= 400; i+=2) {        
+        document.write("Número:  "+i+" <br>");
+        suma += i; //se suma cada numero (acumula)
+        cantidad++;  
+        }
+        
+        let promedio = suma / cantidad;
+        let moda = "No hay moda ya que todos los números son distintos";
+        let media = suma / cantidad;
+
+        document.write("<br>Promedio: " + promedio + "<br>"); 
+        document.write("<br>"+"Moda: " + moda + "<br>");
+        document.write("<br>"+"Media: " + promedio + "<br>"); 
+        
+    </script>
+</body>
+</html>
+
+
+
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Vocales y Consonantes en Murciélago</h1>
+
+    <script>
+        const palabra = "murciélago";
+        const vocales= "aeiouáéíóú";
+        let numVocales = 0;
+        let numConsonantes = 0;
+
+        let p = 0;
+while (palabra[p] !== undefined) {
+    let j = 0;
+    let esVocal = false;
+    while (vocales[j] !== undefined) {
+        if (palabra[p] === vocales[j]) {
+            esVocal = true;
+            break;
+        }
+        j++;
+    }
+    if (esVocal) {
+        numVocales++;
+    } else if (
+        (palabra[p] >= 'a' && palabra[p] <= 'z')
+        || (palabra[p] >= 'A' && palabra[p] <= 'Z') 
+        || palabra[p] === 'ñ' || palabra[p] === 'Ñ') {
+        numConsonantes++;
+    }
+    p++;
+}
+function idiomaEFE(texto) {
+            let resultado = "";
+            let k = 0;
+
+            while (texto[k] !== undefined) {
+                let l = 0;
+                let esVocal = false;
+                
+                while (vocales[l] !== undefined) {
+                    if (texto[k] === vocales[l]) {
+                        esVocal = true;
+                        break;
+                    }
+                    l++;
+                }
+
+                resultado += texto[k];
+                if (esVocal) {
+                    resultado += "f" + texto[k]; // Se duplica la vocal con una 'f' en medio
+                }
+
+                k++;
+            }
+            return resultado;
+        }
+
+const palabraEFE = idiomaEFE(palabra);
+
+document.write("Número de vocales: " +numVocales+"<br>");
+document.write("<br>"+"Número de consonantes: " + numConsonantes+"<br>");
+document.write("<br>"+"Palabra en idioma de la EFE:  " + palabraEFE);
+
+    </script>
+</body>
