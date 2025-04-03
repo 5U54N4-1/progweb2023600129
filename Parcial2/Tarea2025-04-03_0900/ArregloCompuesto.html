@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            function Arreglo() {
+                
+                let arreglo = ["Hola", 14, true, " Profesor", 12, false, "!", 2003, true];
+
+                
+                let sumaNumeros = 0;
+                let concCadenas = "";
+                let booleanos = true;
+
+                document.write("<h1>Arreglo Compuesto</h1>");
+            
+                for (let i = 0; i < arreglo.length; i++) {
+                    if (typeof arreglo[i] === 'number') {
+                        sumaNumeros += arreglo[i];
+                    } else if (typeof arreglo[i] === 'string') {
+                        concCadenas += " " + arreglo[i];
+                    } else {
+                        booleanos = booleanos && arreglo[i];
+                    }
+                }
+    
+                document.write("Suma de números: " + sumaNumeros + "<br>"+"<br>");
+                document.write("Concatenación Cadenas: " + concCadenas + "<br>"+"<br>");
+                document.write("Resultado booleanos: " + booleanos);
+            }
+        </script>
+    </head>
+    <body onload="Arreglo()"></body>
+</html>

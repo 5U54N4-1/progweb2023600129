@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script>
+        function mostrarMeses() {
+            let meses = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+            let ordinales = [
+                "1ro",  "2do", "3ro", "4to", "5to",  "6to", 
+                "7mo",  "8vo", "9no", "10mo", "11vo","12mo"];
+
+
+            document.write("<h1>Meses del año con su ordinal</h1>");
+            
+            for (let i = 0; i < ordinales.length; i++) {
+            document.write(ordinales[i] + " - " + meses[i] + "<br>");
+            }
+
+        }
+    </script>
+</head>
+<body onload="mostrarMeses()"> 
+</body>
+</html>
+
+
