@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        input {
+            text-align: right;
+            width: 210px; 
+            height: 50px;
+        }
+        button{
+            width: 50px; 
+            height: 50px;
+        }
+
+    </style>
+    <script>
+    document.write("<h1>Calculadora interactiva</h1>");
+        function btn_click(val){
+            var display = document.getElementById("display");
+            if(val == "="){
+                display.value= eval(display.value);
+            }else if(val == "AC"){
+                display.value= "";
+            }else{
+                display.value += val;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="display" readonly></td>
+        </tr>
+        <tr>
+            <td><button onclick="btn_click('7')"><a>7</a></button></td>
+            <td><button onclick="btn_click('8')"><a>8</a></button></td>
+            <td><button onclick="btn_click('9')"><a>9</a></button></td>
+            <td><button onclick="btn_click('-')"><a>-</a></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btn_click('4')"><a>4</a></button></td>
+            <td><button onclick="btn_click('5')"><a>5</a></button></td>
+            <td><button onclick="btn_click('6')"><a>6</a></button></td>
+            <td><button onclick="btn_click('+')"><a>+</a></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btn_click('1')"><a>1</a></button></td>
+            <td><button onclick="btn_click('2')"><a>2</a></button></td>
+            <td><button onclick="btn_click('3')"><a>3</a></button></td>
+            <td><button onclick="btn_click('*')"><a>*</a></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="btn_click('0')"><a>0</a></button></td>
+            <td><button onclick="btn_click('/')"><a>/</a></button></td>
+            <td><button onclick="btn_click('AC')"><a>AC</a></button></td>
+            <td><button onclick="btn_click('=')"><a>=</a></button></td>
+        </tr>
+    </table>
+</body>
+</html>

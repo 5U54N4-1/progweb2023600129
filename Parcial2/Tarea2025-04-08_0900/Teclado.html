@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 50px; 
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: arial;
+        }
+
+        #w, #a, #s, #d, #z, #x {
+            background-color: lightgray;
+        }
+    </style>
+
+    <script>
+        document.write("<h1>Teclado interactivo</h1>");
+        const colores = ['orange', 'red', 'yellow', 'greenyellow', 'blue', 'purple','pink','cyan'];
+
+        // Índices de color por tecla
+        const colorIndices = {
+            w: 0,
+            a: 0,
+            s: 0,
+            d: 0,
+            z: 0,
+            x: 0
+        };
+
+        function agregarListeners() {
+            document.addEventListener("keydown", teclado);
+            document.addEventListener("keyup", teclado);
+        }
+
+        function teclado(event) {
+            const tecla = event.key.toLowerCase();
+            const divColor = document.getElementById(tecla);
+
+            if (!divColor) return;
+
+            if (event.type === "keydown") {
+                if (tecla in colorIndices) {
+                    // Cambia el color según el índice actual
+                    divColor.style.backgroundColor = colores[colorIndices[tecla]];
+                    // Avanza al siguiente color
+                    colorIndices[tecla] = (colorIndices[tecla] + 1) % colores.length;
+                }
+            }
+            else if (event.type === "keyup") {
+                if (tecla in colorIndices) {
+                    divColor.style.backgroundColor = "lightgray";
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="agregarListeners()">
+    <table>
+        <tr>
+            <td><div></div></td>
+            <td><div id="w">W</div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+            <td><div></div></td>
+        </tr>
+        <tr>
+            <td><div id="a">A</div></td>
+            <td><div id="s">S</div></td>
+            <td><div id="d">D</div></td>
+            <td><div></div></td>
+            <td><div id="z">Z</div></td>
+            <td><div id="x">X</div></td>
+        </tr>
+    </table>
+</body>
+</html>
+
